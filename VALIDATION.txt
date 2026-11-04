@@ -1,0 +1,61 @@
+TopNote 1.3 validation - 2026-10-20
+=================================
+
+Final APK: TopNote-1.3.apk
+Size: 33,310 bytes
+SHA-256:
+fef161db5326571acae042ef7c1d61e7153faeaa3d6a26f8aa424414466dff09
+
+Packaged metadata verified:
+- Package app.topnote.personal
+- versionCode 4; versionName 1.3
+- minSdkVersion 26; targetSdkVersion 34
+- Original six permissions retained; no additional permissions
+- specialUse foreground service retained
+- New NoteRecoveryReceiver present, non-exported
+
+Build and package checks:
+- Java sources and Android resources compiled against SDK Platform 34
+- D8 produced Android bytecode with minimum API 26
+- zipalign -c -v 4 passed
+- APK Signature Scheme v2 and v3 verification passed
+- Public signing certificate matches the uploaded TopNote 1.2 APK
+- Final app sources matched the build used for this APK
+- Distributed source excludes private signing keys; the Gradle debug build
+  uses the original key when supplied locally, otherwise its default debug key
+
+Signing-certificate SHA-256:
+7838662df65b30432a2344264aaa55a93344c030eb18db83b91982471aa671eb
+
+Host regression suite:
+PASS - 1,327 assertions, using the actual service, restore/recovery receivers,
+settings, recovery and diagnostics against fake Android APIs. API branches:
+26, 33, 34, 35. Repeated cycle assertions are included in this count; these are
+not 1,327 independent device tests.
+
+Covered behavior:
+- Sleep/unlock, delayed/missed events, healthy-window preservation
+- Periodic redraw, delayed draw, bounded stale-window rebuild
+- System-hidden windows and preserved repair budget on RECOVER
+- Non-waking inexact alarm, immutable explicit receiver, delayed delivery
+- Recovery after accepted/rejected starts and foreground-promotion failure
+- Stop/Hide, permission loss, older/newer user-stop records, legacy migration
+- Missing process names, clock rollback and unavailable exit history
+- Keeping an already-running service when exit history cannot be read
+- Elapsed versus CPU-awake diagnostic clocks
+- Reason 13 descriptions, bounded dated logs and note-text redaction
+
+Not verified here:
+- Installation or execution on a physical Android phone
+- Execution on an Android emulator
+- ITEL S685LN / Android 15 background-manager behavior
+- Actual overlay compositor visibility or protected-app suppression
+- Real OS alarm delivery, foreground-service restarts or overnight persistence
+
+Build tools used:
+Java runtime 17; Eclipse ECJ 3.37.0; Android SDK Build Tools 34.0.0;
+Android SDK Platform 34. External build-tool archives were checked against
+published checksums. See README.txt for portable build commands.
+
+This package fixes identified code gaps and is ready for phone verification.
+It does not establish that the user's device-specific disappearance is cured.

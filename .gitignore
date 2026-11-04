@@ -1,0 +1,35 @@
+# Android/Gradle generated files
+.gradle/
+.idea/
+*.iml
+build/
+**/build/
+build-local/
+local.properties
+.externalNativeBuild/
+.cxx/
+.kotlin/
+
+# Never track private signing credentials or keys
+signing/
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+*.asc
+*.env
+.env*
+
+# OS, editor and Python cache
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vscode/
+
+# Build binaries: publish a vetted APK as a GitHub Release asset instead
+*.apk
+*.aab
+*.apks
