@@ -1,4 +1,4 @@
-<img width="709" height="1600" alt="WhatsApp Image 2026-11-04 at 9 21 48 AM (2)" src="https://github.com/user-attachments/assets/e8b8428f-528d-49f5-b181-df0459644491" />
+<img width="70" height="160" alt="WhatsApp Image 2026-11-04 at 9 21 48 AM (2)" src="https://github.com/user-attachments/assets/e8b8428f-528d-49f5-b181-df0459644491" />
 
 # TopNote
 
